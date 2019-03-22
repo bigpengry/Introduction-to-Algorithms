@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func insertionSorting(a []int)[]int{
+func InsertionSort(a []int)[]int{
 	//注意课本上的数组下标是从1开始，而实际实现中是从0开始
 	for j:=1;j<len(a);j++ {
 		key:=a[j]
@@ -18,6 +18,6 @@ func insertionSorting(a []int)[]int{
 }
 
 func main() {
-	a:=[]int{5,2,4,6,1,3}
-	fmt.Println(insertionSorting(a))
+	a := []int{5, 2, 4, 6, 1, 3}
+	fmt.Println(InsertionSort(a))
 }

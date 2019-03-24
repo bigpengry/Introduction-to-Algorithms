@@ -1,8 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
 
-//数组下标从0开始
+//输入一个子数组，起始位置，中点，结束位置，返回一个排序好的子数组
 func merge(A *[]int,start,mid,end int){
 	n1:=mid-start+1
 	n2:=end-mid
@@ -42,6 +46,7 @@ func merge(A *[]int,start,mid,end int){
 	}
 }
 
+//输入数组，数组起始位置，结束位置。对数组进行排序，并返回一个排序完毕的数组
 func MergeSort(A []int,start,end int) []int {
 	if start<end {
 		mid:=(start+end)/2
@@ -52,9 +57,16 @@ func MergeSort(A []int,start,end int) []int {
 	return A
 }
 
-
+func init(){
+	//以时间作为初始化种子
+	rand.Seed(time.Now().UnixNano())
+}
 
 func main() {
-	A:=[]int{3,41,52,26,38,57,9,49}
+	n:=10
+	A:=make([]int,n)
+	for i:=0;i<n ;i++  {
+		A[i]=rand.Intn(n)
+	}
 	fmt.Println(MergeSort(A,0,len(A)-1))
 }

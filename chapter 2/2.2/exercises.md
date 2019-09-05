@@ -8,7 +8,7 @@
 for i = 1 to A.length-1                //c1  n
     min = i                            //c2  n-1
     for j = i + 1 to A.length          //c3  2+..+n
-        if A[i] < min                  //c4  2+..+n-1
+        if A[j] < min                  //c4  2+..+n-1
             min = j                    //c5  2+..+n-1
     if min ≠ i                         //c6 n-1
         exchange A[i] with A[min]      //c7 n-1
